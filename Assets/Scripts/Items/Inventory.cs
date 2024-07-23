@@ -10,8 +10,11 @@ public class Inventory
 
     public Inventory()
     {
-        _oranges = new Orange(0);
-        _painkillers = new Painkiller(0);
+        _oranges = new Orange();
+        _painkillers = new Painkiller();
+
+        _oranges.Count = 0;
+        _painkillers.Count = 0;
     }
 
     public Item GetItem(ItemType itemType)

@@ -30,6 +30,13 @@ public class Necessity
             }
         }
 
+        if (items.Count <= 0)
+        {
+            Item item = _inventory.GetItem(ItemType.Painkillers);
+            item.Count = 1;
+            items.Add(item);
+        }
+
         return items;
     }
 }

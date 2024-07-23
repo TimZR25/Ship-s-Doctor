@@ -9,7 +9,7 @@ public class Bootstrap : MonoBehaviour
     {
         Inventory inventory = new Inventory();
 
-        _player.Inject(inventory);
         _inventoryView.Inject(inventory);
+        _player.Inject(inventory);
     }
 }
