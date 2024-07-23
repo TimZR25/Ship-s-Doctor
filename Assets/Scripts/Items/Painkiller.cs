@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class Painkiller : Item
 {
-    public Painkiller(int count, string name) : base(count, name)
+    public Painkiller(int count) : base(count)
     {
-        _itemType = ItemType.Painkillers;
+        _type = ItemType.Painkillers;
+        _name = "Painkillers";
     }
 }

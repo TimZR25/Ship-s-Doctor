@@ -1,11 +1,12 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.Jobs.LowLevel.Unsafe;
+using System.Linq;
 using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    [SerializeField] private float _interactRadius = 2f;
+
     private Inventory _inventory;
+    public Inventory Inventory => _inventory;
 
     public void Inject(Inventory inventory)
     {
@@ -14,13 +15,38 @@ public class Player : MonoBehaviour
 
     public void Update()
     {
+        //AddRemove();
+
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            Interact();
+        }
+    }
+
+    private void Interact()
+    {
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, _interactRadius);
+
+        if (colliders.Length <= 0) return;
+
+        foreach (Collider2D collider in colliders)
+        {
+            if (collider.TryGetComponent(out Interactable interactable))
+            {
+                interactable.Interact();
+            }
+        }
+    }
+
+    private void AddRemove()
+    {
         if (Input.GetKeyDown(KeyCode.Q))
         {
             _inventory.AddItem(ItemType.Oranges);
         }
         if (Input.GetKeyDown(KeyCode.A))
         {
-            _inventory.RemoveItem(ItemType.Oranges);
+            _inventory.TryRemoveItem(ItemType.Oranges);
         }
 
         if (Input.GetKeyDown(KeyCode.E))
@@ -29,7 +55,12 @@ public class Player : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.D))
         {
-            _inventory.RemoveItem(ItemType.Painkillers);
+            _inventory.TryRemoveItem(ItemType.Painkillers);
         }
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.DrawWireSphere(transform.position, _interactRadius);
     }
 }

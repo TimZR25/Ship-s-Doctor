@@ -10,11 +10,11 @@ public class Inventory
 
     public Inventory()
     {
-        _oranges = new Orange(0, "Orange");
-        _painkillers = new Painkiller(0, "Painkiller");
+        _oranges = new Orange(0);
+        _painkillers = new Painkiller(0);
     }
 
-    private Item GetItem(ItemType itemType)
+    public Item GetItem(ItemType itemType)
     {
         switch (itemType)
         {
@@ -33,12 +33,16 @@ public class Inventory
         items.Count++;
     }
 
-    public void RemoveItem(ItemType itemType)
+    public bool TryRemoveItem(ItemType itemType)
     {
         Item items = GetItem(itemType);
         if (items.Count > 0)
         {
             items.Count--;
+
+            return true;
         }
+
+        return false;
     }
 }
