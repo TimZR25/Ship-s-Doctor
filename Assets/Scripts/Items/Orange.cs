@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Orange : Item
 {
-    public Orange(int count) : base(count)
+    public Orange()
     {
         _type = ItemType.Oranges;
         _name = "Oranges";

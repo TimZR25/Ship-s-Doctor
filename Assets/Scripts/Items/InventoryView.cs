@@ -1,9 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class InventoryView : MonoBehaviour
 {
+    [SerializeField] private Text _oranges;
+    [SerializeField] private Text _painkillers;
+
     private Inventory _inventory;
 
     public void Inject(Inventory inventory)
@@ -16,11 +20,11 @@ public class InventoryView : MonoBehaviour
 
     private void OnOrangesChanged(int count)
     {
-        Debug.Log($"Oranges: {count}");
+        _oranges.text = $"Oranges: {count}";
     }
 
     private void OnPainkillersChanged(int count)
     {
-        Debug.Log($"Painkillers: {count}");
+        _painkillers.text = $"Painkillers: {count}";
     }
 }

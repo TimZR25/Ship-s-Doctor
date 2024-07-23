@@ -27,9 +27,4 @@ public abstract class Item
     public ItemType Type => _type;
 
     public UnityAction<int> CountChanged;
-
-    public Item(int count)
-    {
-        Count = count;
-    }
 }

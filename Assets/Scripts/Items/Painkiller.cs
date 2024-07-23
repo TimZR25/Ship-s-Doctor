@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Painkiller : Item
 {
-    public Painkiller(int count) : base(count)
+    public Painkiller()
     {
         _type = ItemType.Painkillers;
         _name = "Painkillers";
