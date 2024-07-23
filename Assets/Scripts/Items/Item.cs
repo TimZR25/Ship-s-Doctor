@@ -13,7 +13,7 @@ public abstract class Item
         }
     }
 
-    private string _name;
+    protected string _name;
     public string Name
     {
         get { return _name; }
@@ -23,14 +23,13 @@ public abstract class Item
         }
     }
 
-    protected ItemType _itemType;
-    public ItemType ItemType => _itemType;
+    protected ItemType _type;
+    public ItemType Type => _type;
 
     public UnityAction<int> CountChanged;
 
-    public Item(int count, string name)
+    public Item(int count)
     {
         Count = count;
-        Name = name;
     }
 }
