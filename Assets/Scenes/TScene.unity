@@ -378,6 +378,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _player: {fileID: 1672957957}
   _inventoryView: {fileID: 560911202}
+  _audioLibrary: {fileID: 11400000, guid: 365c258bcca1f624cb7a8c5afa37e9ac, type: 2}
+  _musicSource: {fileID: 114714849579629287, guid: 093197dc36626ac419ecb91a196d37d4, type: 3}
 --- !u!1 &490758338
 GameObject:
   m_ObjectHideFlags: 0
