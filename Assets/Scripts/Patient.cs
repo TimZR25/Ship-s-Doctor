@@ -13,6 +13,19 @@ public class Patient : Interactable
     [SerializeField] private float _minWaitingTime = 10;
     [SerializeField] private float _maxWaitingTime = 45f;
 
+    public float WaitingTime { get; set; }
+    public float CurrentWaitingTime 
+    {
+        get
+        {
+            return _currentWaitingTime;
+        }
+        set
+        {
+            _currentWaitingTime = value;
+        }
+    }
+
     public float MaxBreakTime
     {
         get
@@ -24,6 +37,7 @@ public class Patient : Interactable
             _maxBreakTime = value;
         }
     }
+
     public float MaxWaitingTime
     {
         get
@@ -35,9 +49,20 @@ public class Patient : Interactable
             _maxWaitingTime = value;
         }
     }
+    public State CurrentState
+    {
+        get
+        {
+            return _state;
+        }
+        set
+        {
+            _state = value;
+        }
+    }
 
     private float _breakTime = 0;
-    private float _waitingTime = 0;
+    private float _currentWaitingTime = 0;
 
     private float GetRandomWaitingTime => Random.Range(_minWaitingTime, _maxWaitingTime);
 
@@ -53,7 +78,8 @@ public class Patient : Interactable
             Debug.Log($"I need {item.Name}: {item.Count}");
         }
 
-        _waitingTime = GetRandomWaitingTime;
+        WaitingTime = GetRandomWaitingTime;
+        CurrentWaitingTime = WaitingTime;
         _state = State.Waiting;
     }
 
@@ -102,13 +128,13 @@ public class Patient : Interactable
         switch (_state)
         {
             case State.Waiting:
-                if (_waitingTime >= 0)
+                if (CurrentWaitingTime >= 0)
                 {
-                    _waitingTime -= Time.deltaTime;
+                    CurrentWaitingTime -= Time.deltaTime;
                 }
                 else
                 {
-                    _waitingTime = 0;
+                    CurrentWaitingTime = 0;
                     Debug.Log("You LOSE");
                     _state = State.Dead;
                 }
@@ -121,7 +147,7 @@ public class Patient : Interactable
                 else
                 {
                     _items = necessity.GetNecessities();
-                    _waitingTime = GetRandomWaitingTime;
+                    CurrentWaitingTime = GetRandomWaitingTime;
                     _state = State.Waiting;
 
                     foreach (Item item in _items)
@@ -135,8 +161,4 @@ public class Patient : Interactable
         }
     }
 
-    private enum State
-    {
-        Waiting, Breaking, Dead
-    }
 }
