@@ -24,6 +24,11 @@ public class Bootstrap : MonoBehaviour
         _inventoryView.Inject(inventory);
         _player.Inject(inventory);
 
+        foreach (var patient in _patients)
+        {
+            patient.Inject(_audioLibrary);
+        }
+
         PlayMainTheme();
     }
 

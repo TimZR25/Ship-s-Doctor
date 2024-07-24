@@ -3,15 +3,16 @@ using UnityEngine;
 
 public class Patient : Interactable
 {
+    [SerializeField] private float _maxBreakTime = 30f;
+
+    [SerializeField] private float _minWaitingTime = 10;
+    [SerializeField] private float _maxWaitingTime = 45f;
+
     private Necessity necessity;
 
     private List<Item> _items;
 
-    [SerializeField] private float _maxBreakTime = 30f;
-
-
-    [SerializeField] private float _minWaitingTime = 10;
-    [SerializeField] private float _maxWaitingTime = 45f;
+    private AudioLibrary _audioLibrary;
 
     public float WaitingTime { get; set; }
     public float CurrentWaitingTime 
@@ -81,6 +82,11 @@ public class Patient : Interactable
         WaitingTime = GetRandomWaitingTime;
         CurrentWaitingTime = WaitingTime;
         _state = State.Waiting;
+    }
+
+    public void Inject(AudioLibrary audioLibrary)
+    {
+        _audioLibrary = audioLibrary;
     }
 
     public override void Interact()
