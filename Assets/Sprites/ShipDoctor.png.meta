@@ -1,0 +1,539 @@
+fileFormatVersion: 2
+guid: 97db5f17edfe14c4b9d6b861ecc36223
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 2461854156754380048
+    second: ShipDoctor_0
+  - first:
+      213: 3475609919669144287
+    second: ShipDoctor_1
+  - first:
+      213: -4512216411277334777
+    second: ShipDoctor_2
+  - first:
+      213: 5367025725098567110
+    second: ShipDoctor_3
+  - first:
+      213: -248051087520336999
+    second: ShipDoctor_4
+  - first:
+      213: -5567373458389349055
+    second: ShipDoctor_5
+  - first:
+      213: 2001903230641265969
+    second: ShipDoctor_6
+  - first:
+      213: 2022676063572949163
+    second: ShipDoctor_7
+  - first:
+      213: 6590478554122506261
+    second: ShipDoctor_8
+  - first:
+      213: -4837716886321183397
+    second: ShipDoctor_9
+  - first:
+      213: -8383129977042362687
+    second: ShipDoctor_10
+  - first:
+      213: 2872730946776415794
+    second: ShipDoctor_11
+  - first:
+      213: 7994635446033106906
+    second: ShipDoctor_12
+  - first:
+      213: -3846511990453234234
+    second: ShipDoctor_13
+  - first:
+      213: -5878848430867082676
+    second: ShipDoctor_14
+  - first:
+      213: 8149987859072467355
+    second: ShipDoctor_15
+  - first:
+      213: 1931360956435044486
+    second: ShipDoctor_16
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: 4
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: ShipDoctor_0
+      rect:
+        serializedVersion: 2
+        x: 389
+        y: 275
+        width: 7
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 015e926ef434a2220800000000000000
+      internalID: 2461854156754380048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShipDoctor_1
+      rect:
+        serializedVersion: 2
+        x: 401
+        y: 275
+        width: 11
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fda04bfaec8db3030800000000000000
+      internalID: 3475609919669144287
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShipDoctor_2
+      rect:
+        serializedVersion: 2
+        x: 419
+        y: 275
+        width: 11
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7076028a4136161c0800000000000000
+      internalID: -4512216411277334777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShipDoctor_3
+      rect:
+        serializedVersion: 2
+        x: 433
+        y: 275
+        width: 14
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6c522e416718b7a40800000000000000
+      internalID: 5367025725098567110
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShipDoctor_4
+      rect:
+        serializedVersion: 2
+        x: 447
+        y: 278
+        width: 18
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9937332a9debe8cf0800000000000000
+      internalID: -248051087520336999
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShipDoctor_5
+      rect:
+        serializedVersion: 2
+        x: 482
+        y: 260
+        width: 28
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 14dc3c83657bcb2b0800000000000000
+      internalID: -5567373458389349055
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShipDoctor_6
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 179
+        width: 14
+        height: 121
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 13d5419b16038cb10800000000000000
+      internalID: 2001903230641265969
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShipDoctor_7
+      rect:
+        serializedVersion: 2
+        x: 546
+        y: 232
+        width: 90
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ba873f8c92df11c10800000000000000
+      internalID: 2022676063572949163
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShipDoctor_8
+      rect:
+        serializedVersion: 2
+        x: 567
+        y: 264
+        width: 35
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5105d4eb355167b50800000000000000
+      internalID: 6590478554122506261
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShipDoctor_9
+      rect:
+        serializedVersion: 2
+        x: 464
+        y: 269
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b55caea8f1afcdcb0800000000000000
+      internalID: -4837716886321183397
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShipDoctor_10
+      rect:
+        serializedVersion: 2
+        x: 471
+        y: 270
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ce167c93b329ab80800000000000000
+      internalID: -8383129977042362687
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShipDoctor_11
+      rect:
+        serializedVersion: 2
+        x: 466
+        y: 262
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 23e31e1639dfdd720800000000000000
+      internalID: 2872730946776415794
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShipDoctor_12
+      rect:
+        serializedVersion: 2
+        x: 472
+        y: 262
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ad7cc8da496a2fe60800000000000000
+      internalID: 7994635446033106906
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShipDoctor_13
+      rect:
+        serializedVersion: 2
+        x: 495
+        y: 227
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6c511c079b17e9ac0800000000000000
+      internalID: -3846511990453234234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShipDoctor_14
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 27
+        width: 461
+        height: 186
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c421ec5ef722a6ea0800000000000000
+      internalID: -5878848430867082676
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShipDoctor_15
+      rect:
+        serializedVersion: 2
+        x: 496
+        y: 195
+        width: 16
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b91c2cff6c29a1170800000000000000
+      internalID: 8149987859072467355
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShipDoctor_16
+      rect:
+        serializedVersion: 2
+        x: 543
+        y: 211
+        width: 18
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6889e5d9e829dca10800000000000000
+      internalID: 1931360956435044486
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      ShipDoctor_0: 2461854156754380048
+      ShipDoctor_1: 3475609919669144287
+      ShipDoctor_10: -8383129977042362687
+      ShipDoctor_11: 2872730946776415794
+      ShipDoctor_12: 7994635446033106906
+      ShipDoctor_13: -3846511990453234234
+      ShipDoctor_14: -5878848430867082676
+      ShipDoctor_15: 8149987859072467355
+      ShipDoctor_16: 1931360956435044486
+      ShipDoctor_2: -4512216411277334777
+      ShipDoctor_3: 5367025725098567110
+      ShipDoctor_4: -248051087520336999
+      ShipDoctor_5: -5567373458389349055
+      ShipDoctor_6: 2001903230641265969
+      ShipDoctor_7: 2022676063572949163
+      ShipDoctor_8: 6590478554122506261
+      ShipDoctor_9: -4837716886321183397
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
