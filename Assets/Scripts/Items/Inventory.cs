@@ -1,3 +1,4 @@
+using Assets.Scripts.Items;
 using System;
 
 public class Inventory
@@ -8,10 +9,16 @@ public class Inventory
     private Painkiller _painkillers;
     public Painkiller Painkillers => _painkillers;
 
+    private Bandage _bandage;
+    public Bandage Bandage => _bandage;
+
+    public Action<Item> ItemCountChanged;
+
     public Inventory()
     {
         _oranges = new Orange();
         _painkillers = new Painkiller();
+        _bandage = new Bandage();
 
         _oranges.Count = 0;
         _painkillers.Count = 0;
@@ -25,6 +32,8 @@ public class Inventory
                 return _oranges;
             case ItemType.Painkillers:
                 return _painkillers;
+            case ItemType.Bandage:
+                return _bandage;
             default:
                 throw new NotImplementedException();
         }
@@ -34,6 +43,7 @@ public class Inventory
     {
         Item items = GetItem(itemType);
         items.Count++;
+        ItemCountChanged?.Invoke(items);
     }
 
     public bool TryRemoveItem(ItemType itemType)
@@ -42,10 +52,10 @@ public class Inventory
         if (items.Count > 0)
         {
             items.Count--;
-
+            ItemCountChanged?.Invoke(items);
             return true;
         }
-
+        
         return false;
     }
 }

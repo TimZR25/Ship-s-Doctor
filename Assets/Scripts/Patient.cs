@@ -1,19 +1,50 @@
+using System;
 using System.Collections.Generic;
+using Unity.VisualScripting;
+using UnityEditor.PackageManager.Requests;
 using UnityEngine;
 
 public class Patient : Interactable
 {
-    private Necessity necessity;
-
-    private List<Item> _items;
-
     [SerializeField] private float _maxBreakTime = 30f;
-
-
     [SerializeField] private float _minWaitingTime = 10;
     [SerializeField] private float _maxWaitingTime = 45f;
+    [SerializeField] private Role _role;
+
+    private Necessity _necessity = new Necessity();
+    private List<Item> _needItems;
+
+    private float _breakTime = 0;
+    private float _currentWaitingTime = 0;
+
+    private State _state;
 
     public float WaitingTime { get; set; }
+
+    public List<Item> NeedItems
+    {
+        get
+        {
+            return _needItems;
+        }
+        set
+        {
+            _needItems = value;
+        }
+    }
+
+    public Role Role
+    {
+        get 
+        {
+            return _role; 
+        }
+        set 
+        {
+            _role = value; 
+        }
+    }
+
     public float CurrentWaitingTime 
     {
         get
@@ -49,6 +80,7 @@ public class Patient : Interactable
             _maxWaitingTime = value;
         }
     }
+
     public State CurrentState
     {
         get
@@ -61,31 +93,23 @@ public class Patient : Interactable
         }
     }
 
-    private float _breakTime = 0;
-    private float _currentWaitingTime = 0;
+    private float GetRandomWaitingTime => UnityEngine.Random.Range(_minWaitingTime, _maxWaitingTime);
 
-    private float GetRandomWaitingTime => Random.Range(_minWaitingTime, _maxWaitingTime);
-
-    private State _state;
+    public Action<Patient> NeedItemsChanged;
 
     private void Start()
     {
-        necessity = new Necessity();
-        _items = necessity.GetNecessities();
+        RequestItems();
 
-        foreach (Item item in _items)
+        foreach (Item item in NeedItems)
         {
             Debug.Log($"I need {item.Name}: {item.Count}");
         }
-
-        WaitingTime = GetRandomWaitingTime;
-        CurrentWaitingTime = WaitingTime;
-        _state = State.Waiting;
     }
 
     public override void Interact()
     {
-        foreach (Item item in _items)
+        foreach (Item item in NeedItems)
         {
             int count = item.Count;
             for (int i = 0; i < item.Count; i++)
@@ -99,19 +123,19 @@ public class Patient : Interactable
             item.Count = count;
         }
 
-        List<Item> buff = new List<Item>(_items);
+        List<Item> buff = new List<Item>(NeedItems);
 
         for (int i = 0; i < buff.Count; i++)
         {
             if (buff[i].Count <= 0)
             {
-                _items.Remove(buff[i]);
+                NeedItems.Remove(buff[i]);
             }
         }
 
-        if (_items.Count > 0)
+        if (NeedItems.Count > 0)
         {
-            foreach (Item item in _items)
+            foreach (Item item in NeedItems)
             {
                 Debug.Log($"I need {item.Name}: {item.Count}");
             }
@@ -121,6 +145,15 @@ public class Patient : Interactable
             _breakTime = _maxBreakTime;
             _state = State.Breaking;
         }
+    }
+
+    private void RequestItems()
+    {
+        NeedItems = _necessity.GetNecessities();
+        WaitingTime = GetRandomWaitingTime;
+        CurrentWaitingTime = WaitingTime;
+        _state = State.Waiting;
+        NeedItemsChanged?.Invoke(this);
     }
 
     public void Update()
@@ -146,11 +179,9 @@ public class Patient : Interactable
                 }
                 else
                 {
-                    _items = necessity.GetNecessities();
-                    CurrentWaitingTime = GetRandomWaitingTime;
-                    _state = State.Waiting;
+                    RequestItems();
 
-                    foreach (Item item in _items)
+                    foreach (Item item in NeedItems)
                     {
                         Debug.Log($"I need {item.Name}: {item.Count}");
                     }
