@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 
 public class Necessity
 {
@@ -25,6 +26,7 @@ public class Necessity
             if (count > 0)
             {
                 Item item = _inventory.GetItem(itemType);
+                
                 item.Count = count;
                 items.Add(item);
             }

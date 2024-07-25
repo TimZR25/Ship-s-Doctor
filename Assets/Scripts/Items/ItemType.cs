@@ -1,4 +1,4 @@
 public enum ItemType
 {
-    Oranges, Painkillers
+    Oranges, Painkillers, Bandage
 }

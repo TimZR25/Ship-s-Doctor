@@ -5,6 +5,7 @@ public class Bootstrap : MonoBehaviour
 {
     [SerializeField] private Player _player;
     [SerializeField] private InventoryView _inventoryView;
+    [SerializeField] private GlobalUIView _globalUIView;
 
     [Header("Audio")]
     [SerializeField] private AudioLibrary _audioLibrary;
@@ -14,21 +15,19 @@ public class Bootstrap : MonoBehaviour
 
     private void Awake()
     {
-        _patients = FindObjectsByType<Patient>(FindObjectsSortMode.None);
-    }
-
-    private void Start()
-    {
         Inventory inventory = new Inventory();
-
-        _inventoryView.Inject(inventory);
+        _patients = FindObjectsByType<Patient>(FindObjectsSortMode.None);
+        _globalUIView.Inject(inventory, _patients);
         _player.Inject(inventory);
-
+        
         foreach (var patient in _patients)
         {
             patient.Inject(_audioLibrary);
         }
+    }
 
+    private void Start()
+    {
         PlayMainTheme();
     }
 
