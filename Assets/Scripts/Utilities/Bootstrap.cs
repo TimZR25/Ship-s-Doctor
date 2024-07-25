@@ -19,6 +19,11 @@ public class Bootstrap : MonoBehaviour
         _patients = FindObjectsByType<Patient>(FindObjectsSortMode.None);
         _globalUIView.Inject(inventory, _patients);
         _player.Inject(inventory);
+        
+        foreach (var patient in _patients)
+        {
+            patient.Inject(_audioLibrary);
+        }
     }
 
     private void Start()
