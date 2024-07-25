@@ -51,29 +51,37 @@ public class GlobalUIView : MonoBehaviour
 
     public void ChangeNecessity(Patient patient)
     {
-        for (int i = 0; i < _pirateCaptainNecessity.Length; i++)
-        {
-            _pirateCaptainNecessity[i].SetActive(false);
-            _pirateCleanerNecessity[i].SetActive(false);
-            _pirateDefaultNecessity[i].SetActive(false);
-        }
         switch (patient.Role)
         {
             case Role.Captain:
-                
                 foreach (Item needItem in patient.NeedItems)
                 {
                     switch (needItem.Type)
                     {
                         case ItemType.Bandage:
+                            if (needItem.Count == 0)
+                            {
+                                _pirateCaptainNecessity[0].SetActive(false);
+                                continue;
+                            }
                             _pirateCaptainNecessity[0].SetActive(true);
                             _pirateCaptainNecessityCount[0].text = needItem.Count.ToString();
                             break;
                         case ItemType.Oranges:
+                            if (needItem.Count == 0)
+                            {
+                                _pirateCaptainNecessity[1].SetActive(false);
+                                continue;
+                            }
                             _pirateCaptainNecessity[1].SetActive(true);
                             _pirateCaptainNecessityCount[1].text = needItem.Count.ToString();
                             break;
                         case ItemType.Painkillers:
+                            if (needItem.Count == 0)
+                            {
+                                _pirateCaptainNecessity[2].SetActive(false);
+                                continue;
+                            }
                             _pirateCaptainNecessity[2].SetActive(true);
                             _pirateCaptainNecessityCount[2].text = needItem.Count.ToString();
                             break;
@@ -86,34 +94,65 @@ public class GlobalUIView : MonoBehaviour
                     switch (needItem.Type)
                     {
                         case ItemType.Bandage:
+                            if (needItem.Count == 0)
+                            {
+                                _pirateCleanerNecessity[0].SetActive(false);
+                                continue;
+                            }
                             _pirateCleanerNecessity[0].SetActive(true);
                             _pirateCleanerNecessityCount[0].text = needItem.Count.ToString();
                             break;
                         case ItemType.Oranges:
+                            if (needItem.Count == 0)
+                            {
+                                _pirateCleanerNecessity[1].SetActive(false);
+                                continue;
+                            }
                             _pirateCleanerNecessity[1].SetActive(true);
                             _pirateCleanerNecessityCount[1].text = needItem.Count.ToString();
                             break;
                         case ItemType.Painkillers:
+                            if (needItem.Count == 0) 
+                            {
+                                _pirateCleanerNecessity[2].SetActive(false);
+                                continue;
+                            }
                             _pirateCleanerNecessity[2].SetActive(true);
                             _pirateCleanerNecessityCount[2].text = needItem.Count.ToString();
                             break;
                     }
                 }
                 break;
-            case Role.Default:               
+
+            case Role.Default:
                 foreach (Item needItem in patient.NeedItems)
                 {
                     switch (needItem.Type)
                     {
                         case ItemType.Bandage:
+                            if (needItem.Count == 0)
+                            {
+                                _pirateDefaultNecessity[0].SetActive(false);
+                                continue;
+                            }
                             _pirateDefaultNecessity[0].SetActive(true);
                             _pirateDefaultNecessityCount[0].text = needItem.Count.ToString();
                             break;
                         case ItemType.Oranges:
+                            if (needItem.Count == 0)
+                            {
+                                _pirateDefaultNecessity[1].SetActive(false);
+                                continue;
+                            }
                             _pirateDefaultNecessity[1].SetActive(true);
                             _pirateDefaultNecessityCount[1].text = needItem.Count.ToString();
                             break;
                         case ItemType.Painkillers:
+                            if (needItem.Count == 0)
+                            {
+                                _pirateDefaultNecessity[2].SetActive(false);
+                                continue;
+                            }
                             _pirateDefaultNecessity[2].SetActive(true);
                             _pirateDefaultNecessityCount[2].text = needItem.Count.ToString();
                             break;

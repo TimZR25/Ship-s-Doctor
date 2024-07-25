@@ -106,12 +106,10 @@ public class Patient : Interactable
 
     private void Start()
     {
-        RequestItems();
+        //RequestItems();
 
-        foreach (Item item in NeedItems)
-        {
-            Debug.Log($"I need {item.Name}: {item.Count}");
-        }
+        _breakTime = UnityEngine.Random.Range(1, _minWaitingTime);
+        _state = State.Breaking;
     }
 
     public void Inject(AudioLibrary audioLibrary)
@@ -129,6 +127,7 @@ public class Patient : Interactable
                 if (_player.Inventory.TryRemoveItem(item.Type))
                 {
                     count--;
+
                 }
             }
 
@@ -137,35 +136,40 @@ public class Patient : Interactable
 
         List<Item> buff = new List<Item>(NeedItems);
 
-        for (int i = 0; i < buff.Count; i++)
-        {
-            if (buff[i].Count <= 0)
-            {
-                NeedItems.Remove(buff[i]);
-            }
-        }
+        //for (int i = 0; i < buff.Count; i++)
+        //{
+        //    if (buff[i].Count <= 0)
+        //    {
+        //        NeedItems.Remove(buff[i]);
+        //    }
+        //}
 
-        if (NeedItems.Count > 0)
+
+
+        int temp = 0;
+        foreach (Item item in NeedItems)
         {
-            foreach (Item item in NeedItems)
-            {
-                Debug.Log($"I need {item.Name}: {item.Count}");
-            }
+            temp += item.Count;
         }
-        else
+        if (temp == 0)
         {
             _breakTime = _maxBreakTime;
             _state = State.Breaking;
+            NeedItemsChanged?.Invoke(this);
+            NeedItems.Clear();
+            return;
         }
+        NeedItemsChanged?.Invoke(this);
     }
 
     private void RequestItems()
     {
         NeedItems = _necessity.GetNecessities();
+        NeedItemsChanged?.Invoke(this);
         WaitingTime = GetRandomWaitingTime;
         CurrentWaitingTime = WaitingTime;
         _state = State.Waiting;
-        NeedItemsChanged?.Invoke(this);
+        
     }
 
     public void Update()

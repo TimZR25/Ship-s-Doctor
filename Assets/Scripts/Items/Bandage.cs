@@ -10,8 +10,8 @@ namespace Assets.Scripts.Items
     {
         public Bandage() 
         {
-            _type = ItemType.Oranges;
-            _name = "Oranges";
+            _type = ItemType.Bandage;
+            _name = "Bandage";
         }
     }
 }
