@@ -9,7 +9,6 @@ public abstract class Item
         set
         {
             _count = value;
-            CountChanged?.Invoke(_count);
         }
     }
 

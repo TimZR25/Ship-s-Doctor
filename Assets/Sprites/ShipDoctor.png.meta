@@ -151,10 +151,10 @@ TextureImporter:
       name: ShipDoctor_0
       rect:
         serializedVersion: 2
-        x: 389
-        y: 275
-        width: 7
-        height: 18
+        x: 384
+        y: 276
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -172,10 +172,10 @@ TextureImporter:
       name: ShipDoctor_1
       rect:
         serializedVersion: 2
-        x: 401
-        y: 275
-        width: 11
-        height: 17
+        x: 400
+        y: 276
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -193,10 +193,10 @@ TextureImporter:
       name: ShipDoctor_2
       rect:
         serializedVersion: 2
-        x: 419
-        y: 275
-        width: 11
-        height: 18
+        x: 416
+        y: 276
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -214,9 +214,9 @@ TextureImporter:
       name: ShipDoctor_3
       rect:
         serializedVersion: 2
-        x: 433
-        y: 275
-        width: 14
+        x: 432
+        y: 276
+        width: 16
         height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -576,7 +576,7 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -597,7 +597,7 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -618,7 +618,7 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
