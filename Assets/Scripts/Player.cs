@@ -13,7 +13,7 @@ public class Player : MonoBehaviour
         _inventory = inventory;
     }
 
-    public void Update()
+    private void Update()
     {
         //AddRemove();
 

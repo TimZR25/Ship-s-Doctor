@@ -5,17 +5,22 @@ using UnityEngine;
 public class Diagnostics : MonoBehaviour
 {
     [SerializeField] private Stopwatch _stopwatch;
-
-    [SerializeField] private List<Patient> _patients;
-
+    
     [SerializeField] private float _breakOffset = 2.5f;
     [SerializeField] private float _waitingOffset = 5f;
+    
+    private List<Patient> _patients;
 
     private void Start()
     {
         _stopwatch.Run();
 
         _stopwatch.Elapsed += OnElapsed;
+    }
+
+    public void Inject(List<Patient> patients)
+    {
+        _patients = patients;
     }
 
     private void OnElapsed(int interval)
