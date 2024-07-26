@@ -298,10 +298,10 @@ TextureImporter:
       name: ShipDoctor_7
       rect:
         serializedVersion: 2
-        x: 546
-        y: 232
-        width: 90
-        height: 58
+        x: 576
+        y: 251
+        width: 33
+        height: 41
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -311,27 +311,6 @@ TextureImporter:
       bones: []
       spriteID: ba873f8c92df11c10800000000000000
       internalID: 2022676063572949163
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ShipDoctor_8
-      rect:
-        serializedVersion: 2
-        x: 567
-        y: 264
-        width: 35
-        height: 43
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 5105d4eb355167b50800000000000000
-      internalID: 6590478554122506261
       vertices: []
       indices: 
       edges: []
