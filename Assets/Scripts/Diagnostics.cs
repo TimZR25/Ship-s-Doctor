@@ -27,8 +27,10 @@ public class Diagnostics : MonoBehaviour
     {
         foreach (Patient patient in _patients)
         {
-            patient.MaxBreakTime -= _breakOffset;
-            patient.MaxWaitingTime -= _waitingOffset;
+            if(patient.MaxWaitingTime - _waitingOffset >= patient.MinWaitingTime)
+                patient.MaxWaitingTime -= _waitingOffset;
+            if (patient.MaxBreakTime - _breakOffset >= patient.MaxBreakTime)
+                patient.MaxBreakTime -= _breakOffset;
         }
     }
 }

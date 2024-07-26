@@ -21,11 +21,24 @@ public class GlobalUIView : MonoBehaviour
     private Inventory _inventory;
     private Patient[] _patients;
 
+
+
+    [SerializeField] private Image[] _waitingTimeCurrent;
+
+    private void Update()
+    {
+        for (int i = 0; i < 3; i++)
+        {
+            _waitingTimeCurrent[i].fillAmount = 
+                _patients[(int)_patients[i].Role].CurrentWaitingTime / _patients[(int)_patients[i].Role].WaitingTime;
+        }
+    }
+
+
     public void Inject(Inventory inventory, Patient[] patients)
     {
         _inventory = inventory;
         _patients = patients;
-        Debug.Log("dadadwadwad        " + _patients.Length);
         for (int i = 0; i < _patients.Length; i++)
         {
             _patients[i].NeedItemsChanged += ChangeNecessity;

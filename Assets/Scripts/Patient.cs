@@ -7,6 +7,8 @@ using UnityEngine;
 [RequireComponent(typeof(AudioSource))]
 public class Patient : Interactable
 {
+
+    [SerializeField] private float _minBreakTime = 5f;
     [SerializeField] private float _maxBreakTime = 30f;
     
     [SerializeField] private float _minWaitingTime = 10;
@@ -75,6 +77,18 @@ public class Patient : Interactable
         }
     }
 
+    public float MinBreakTime
+    {
+        get
+        {
+            return _minBreakTime;
+        }
+        set
+        {
+            _minBreakTime = value;
+        }
+    }
+
     public float MaxWaitingTime
     {
         get
@@ -84,6 +98,18 @@ public class Patient : Interactable
         set
         {
             _maxWaitingTime = value;
+        }
+    }
+
+    public float MinWaitingTime
+    {
+        get
+        {
+            return _minWaitingTime;
+        }
+        set
+        {
+            _minWaitingTime = value;
         }
     }
 
@@ -143,16 +169,6 @@ public class Patient : Interactable
 
         List<Item> buff = new List<Item>(NeedItems);
 
-        //for (int i = 0; i < buff.Count; i++)
-        //{
-        //    if (buff[i].Count <= 0)
-        //    {
-        //        NeedItems.Remove(buff[i]);
-        //    }
-        //}
-
-
-
         int temp = 0;
         foreach (Item item in NeedItems)
         {
@@ -203,6 +219,7 @@ public class Patient : Interactable
             case State.Breaking:
                 if (_breakTime > 0)
                 {
+                    CurrentWaitingTime = WaitingTime;
                     _breakTime -= Time.deltaTime;
                 }
                 else

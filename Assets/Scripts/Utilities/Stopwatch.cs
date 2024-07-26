@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class Stopwatch : MonoBehaviour
 {
     [SerializeField] private Text _time;
-
+    [SerializeField] private int _duration;
     private float _seconds = 0;
     public float Seconds => _seconds;
 
@@ -28,7 +28,7 @@ public class Stopwatch : MonoBehaviour
 
             _time.text = ((int)_seconds).ToString();
 
-            if (_seconds >= _interval * 30)
+            if (_seconds >= _interval * _duration)
             {
                 _interval++;
                 Elapsed?.Invoke(_interval);
