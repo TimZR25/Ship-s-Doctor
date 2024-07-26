@@ -1,19 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using UnityEngine;
+﻿using UnityEngine;
 
-namespace Assets.Scripts
+public class BarrelSupplies : Interactable
 {
-    internal class BarrelSupplies : Interactable
-    {
-        [SerializeField] private ItemType _itemType;
+    [SerializeField] private ItemType _itemType;
 
-        public override void Interact()
-        {
-            _player.Inventory.AddItem(_itemType);
-        }
+    public override void Interact()
+    {
+        _player.Inventory.AddItem(_itemType);
     }
 }

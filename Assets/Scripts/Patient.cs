@@ -4,6 +4,7 @@ using Unity.VisualScripting;
 using UnityEditor.PackageManager.Requests;
 using UnityEngine;
 
+[RequireComponent(typeof(AudioSource))]
 public class Patient : Interactable
 {
     [SerializeField] private float _maxBreakTime = 30f;
@@ -12,6 +13,8 @@ public class Patient : Interactable
     [SerializeField] private float _maxWaitingTime = 45f;
     [SerializeField] private Role _role;
 
+    private AudioSource _audioSource;
+
     private Necessity _necessity = new Necessity();
     private List<Item> _needItems;
 
@@ -19,10 +22,6 @@ public class Patient : Interactable
     private float _currentWaitingTime = 0;
 
     private State _state;
-
-    private Necessity necessity;
-
-    private List<Item> _items;
 
     private AudioLibrary _audioLibrary;
 
@@ -104,21 +103,30 @@ public class Patient : Interactable
 
     public Action<Patient> NeedItemsChanged;
 
+    private void Awake()
+    {
+        _audioSource = GetComponent<AudioSource>();
+    }
+
     private void Start()
     {
         //RequestItems();
 
         _breakTime = UnityEngine.Random.Range(1, _minWaitingTime);
         _state = State.Breaking;
+
     }
 
-    public void Inject(AudioLibrary audioLibrary)
+    public void Inject(Player player, AudioLibrary audioLibrary)
     {
         _audioLibrary = audioLibrary;
+        _player = player;
     }
 
     public override void Interact()
     {
+        if (_state == State.Breaking) return;
+
         foreach (Item item in NeedItems)
         {
             int count = item.Count;
@@ -127,7 +135,6 @@ public class Patient : Interactable
                 if (_player.Inventory.TryRemoveItem(item.Type))
                 {
                     count--;
-
                 }
             }
 
@@ -157,6 +164,7 @@ public class Patient : Interactable
             _state = State.Breaking;
             NeedItemsChanged?.Invoke(this);
             NeedItems.Clear();
+            _audioSource.Stop();
             return;
         }
         NeedItemsChanged?.Invoke(this);
@@ -166,10 +174,14 @@ public class Patient : Interactable
     {
         NeedItems = _necessity.GetNecessities();
         NeedItemsChanged?.Invoke(this);
+
         WaitingTime = GetRandomWaitingTime;
         CurrentWaitingTime = WaitingTime;
+
         _state = State.Waiting;
-        
+
+        _audioSource.clip = _audioLibrary.GetAudio(AudioLibrary.Names.Cough);
+        _audioSource.Play();
     }
 
     public void Update()
@@ -196,11 +208,6 @@ public class Patient : Interactable
                 else
                 {
                     RequestItems();
-
-                    foreach (Item item in NeedItems)
-                    {
-                        Debug.Log($"I need {item.Name}: {item.Count}");
-                    }
                 }
                 break;
             default:
