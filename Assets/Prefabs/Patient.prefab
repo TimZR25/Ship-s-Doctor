@@ -79,7 +79,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: -4512216411277334777, guid: 97db5f17edfe14c4b9d6b861ecc36223, type: 3}
+  m_Sprite: {fileID: 2001903230641265969, guid: 97db5f17edfe14c4b9d6b861ecc36223, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -124,7 +124,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.000000029802322, y: -0.067934036}
+  m_Offset: {x: -0.032927036, y: -0.067934036}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -134,7 +134,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.32395238, y: 0.8641319}
+  m_Size: {x: 0.32207012, y: 0.8641319}
   m_EdgeRadius: 0
 --- !u!114 &6833865348191325116
 MonoBehaviour:
@@ -148,6 +148,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 680510cc7d4ef2e45a424d913b8dfe2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _minBreakTime: 5
   _maxBreakTime: 30
   _minWaitingTime: 15
   _maxWaitingTime: 45
@@ -314,7 +315,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -1192609038, guid: 97db5f17edfe14c4b9d6b861ecc36223, type: 3}
+  m_Sprite: {fileID: 260113131, guid: 97db5f17edfe14c4b9d6b861ecc36223, type: 3}
   m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -508,7 +509,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -1192609038, guid: 97db5f17edfe14c4b9d6b861ecc36223, type: 3}
+  m_Sprite: {fileID: 260113131, guid: 97db5f17edfe14c4b9d6b861ecc36223, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
