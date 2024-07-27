@@ -945,6 +945,48 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: ShipDoctor_38
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 420
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 7, y: 7, z: 7, w: 7}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89c4a5920ead02e4d9eb7bc2bef9c500
+      internalID: -263379183
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShipDoctor_39
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 403
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2a06b33d89411e4da5a1470b7ad8f48
+      internalID: 196710897
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -989,6 +1031,7 @@ TextureImporter:
       ShipDoctor_36: 150714015
       ShipDoctor_37: 1083560066
       ShipDoctor_38: -263379183
+      ShipDoctor_39: 196710897
       ShipDoctor_4: -248051087520336999
       ShipDoctor_5: -5567373458389349055
       ShipDoctor_6: 2001903230641265969
