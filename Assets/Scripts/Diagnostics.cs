@@ -29,7 +29,7 @@ public class Diagnostics : MonoBehaviour
         {
             if(patient.MaxWaitingTime - _waitingOffset >= patient.MinWaitingTime)
                 patient.MaxWaitingTime -= _waitingOffset;
-            if (patient.MaxBreakTime - _breakOffset >= patient.MaxBreakTime)
+            if (patient.MaxBreakTime - _breakOffset >= patient.MinBreakTime)
                 patient.MaxBreakTime -= _breakOffset;
         }
     }

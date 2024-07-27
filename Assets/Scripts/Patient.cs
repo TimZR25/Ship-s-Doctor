@@ -15,6 +15,8 @@ public class Patient : Interactable
     [SerializeField] private float _maxWaitingTime = 45f;
     [SerializeField] private Role _role;
 
+    [SerializeField] private int _maxNeededItems = 5;
+
     [SerializeField][Range(0, 0.99f)] private float _chanceSound = 0.4f;
     [SerializeField] private float _soundDelay = 5f;
 
@@ -22,7 +24,7 @@ public class Patient : Interactable
 
     private AudioSource _audioSource;
 
-    private Necessity _necessity = new Necessity();
+    private Necessity _necessity;
     private List<Item> _needItems;
 
     private float _breakTime = 0;
@@ -88,10 +90,6 @@ public class Patient : Interactable
         {
             return _minBreakTime;
         }
-        set
-        {
-            _minBreakTime = value;
-        }
     }
 
     public float MaxWaitingTime
@@ -111,10 +109,6 @@ public class Patient : Interactable
         get
         {
             return _minWaitingTime;
-        }
-        set
-        {
-            _minWaitingTime = value;
         }
     }
 
@@ -137,6 +131,8 @@ public class Patient : Interactable
     private void Awake()
     {
         _audioSource = GetComponent<AudioSource>();
+
+        _necessity = new Necessity(_maxNeededItems);
     }
 
     private void Start()

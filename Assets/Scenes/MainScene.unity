@@ -11143,7 +11143,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _time: {fileID: 1796869983}
-  _duration: 0
+  _duration: 10
 --- !u!4 &1550263707
 Transform:
   m_ObjectHideFlags: 0
@@ -13081,9 +13081,9 @@ MonoBehaviour:
   - {fileID: 2004509416}
   - {fileID: 2004509414}
   _waitingTimeCurrent:
+  - {fileID: 1192200829}
   - {fileID: 995979046}
   - {fileID: 2004509420}
-  - {fileID: 1192200829}
 --- !u!114 &2143212315
 MonoBehaviour:
   m_ObjectHideFlags: 0
