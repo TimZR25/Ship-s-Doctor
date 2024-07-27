@@ -5,8 +5,12 @@ public class Player : MonoBehaviour
 {
     [SerializeField] private float _interactRadius = 2f;
 
+    [SerializeField] private int _maxItems = 6;
+    public int MaxItems => _maxItems;
+
     private Inventory _inventory;
     public Inventory Inventory => _inventory;
+
 
     public void Inject(Inventory inventory)
     {
@@ -15,9 +19,7 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
-        //AddRemove();
-
-        if (Input.GetKeyDown(KeyCode.F))
+        if (Input.GetKeyDown(KeyCode.E))
         {
             Interact();
         }
@@ -35,27 +37,6 @@ public class Player : MonoBehaviour
             {
                 interactable.Interact();
             }
-        }
-    }
-
-    private void AddRemove()
-    {
-        if (Input.GetKeyDown(KeyCode.Q))
-        {
-            _inventory.AddItem(ItemType.Oranges);
-        }
-        if (Input.GetKeyDown(KeyCode.A))
-        {
-            _inventory.TryRemoveItem(ItemType.Oranges);
-        }
-
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            _inventory.AddItem(ItemType.Painkillers);
-        }
-        if (Input.GetKeyDown(KeyCode.D))
-        {
-            _inventory.TryRemoveItem(ItemType.Painkillers);
         }
     }
 

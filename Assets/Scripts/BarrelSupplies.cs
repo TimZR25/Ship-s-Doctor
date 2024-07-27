@@ -6,6 +6,10 @@ public class BarrelSupplies : Interactable
 
     public override void Interact()
     {
-        _player.Inventory.AddItem(_itemType);
+        Item item = _player.Inventory.GetItem(_itemType);
+        while (item.Count < _player.MaxItems)
+        {
+            _player.Inventory.AddItem(_itemType);
+        }
     }
 }
