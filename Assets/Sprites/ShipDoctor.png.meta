@@ -849,7 +849,7 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -857,6 +857,90 @@ TextureImporter:
       bones: []
       spriteID: 3f5d4787652a0b44da6fc43d75729ee4
       internalID: -1505762697
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShipDoctor_34
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 403
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1665b81b5a0e28c4fa4c336345b2d044
+      internalID: 2134809615
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShipDoctor_35
+      rect:
+        serializedVersion: 2
+        x: 493
+        y: 444
+        width: 1
+        height: 1
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e210c989f00eac64bb669fc65abb1b87
+      internalID: -1861192445
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShipDoctor_36
+      rect:
+        serializedVersion: 2
+        x: 183
+        y: 246
+        width: 36
+        height: 41
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0cf8156555a3c6643b69b91f5a4060a8
+      internalID: 150714015
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShipDoctor_37
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 115
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 733e2ba3c6f9f594f9c156686144e8e1
+      internalID: 1083560066
       vertices: []
       indices: 
       edges: []
@@ -900,6 +984,11 @@ TextureImporter:
       ShipDoctor_31: 260113131
       ShipDoctor_32: 1226515039
       ShipDoctor_33: -1505762697
+      ShipDoctor_34: 2134809615
+      ShipDoctor_35: -1861192445
+      ShipDoctor_36: 150714015
+      ShipDoctor_37: 1083560066
+      ShipDoctor_38: -263379183
       ShipDoctor_4: -248051087520336999
       ShipDoctor_5: -5567373458389349055
       ShipDoctor_6: 2001903230641265969
