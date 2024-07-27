@@ -7,9 +7,12 @@ public class Necessity
 {
     private Inventory _inventory;
 
-    public Necessity()
+    private int _maxNeededItems;
+
+    public Necessity(int maxNeededItems)
     {
         _inventory = new Inventory();
+        _maxNeededItems = maxNeededItems;
     }
 
     public List<Item> GetNecessities()
@@ -18,13 +21,18 @@ public class Necessity
 
         var itemTypes = Enum.GetValues(typeof(ItemType));
 
+        int itemsCount = 0;
+
         foreach (ItemType itemType in itemTypes)
         {
-            
             int count = UnityEngine.Random.Range(0, 4);
 
             if (count > 0)
             {
+                itemsCount += count;
+
+                if (itemsCount > _maxNeededItems) break;
+
                 Item item = _inventory.GetItem(itemType);
                 
                 item.Count = count;
