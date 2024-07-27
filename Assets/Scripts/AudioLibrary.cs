@@ -30,7 +30,7 @@ public class AudioLibrary : ScriptableObject
         public const string Theme = "Theme";
         public const string Vomiting = "Vomiting";
         public const string Sea = "Sea";
-        public const string Seagul = "Seagul";
+        public const string Seagull = "Seagull";
     }
 }
 

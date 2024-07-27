@@ -4,7 +4,6 @@ using UnityEngine;
 public class Bootstrap : MonoBehaviour
 {
     [SerializeField] private Player _player;
-    [SerializeField] private InventoryView _inventoryView;
     [SerializeField] private GlobalUIView _globalUIView;
 
     [Header("Audio")]
@@ -48,13 +47,15 @@ public class Bootstrap : MonoBehaviour
 
     private void Start()
     {
-        PlayMainTheme();
+        PlayGlobalMusic(AudioLibrary.Names.Sea, 0.5f);
+        PlayGlobalMusic(AudioLibrary.Names.Seagull, 1f);
     }
 
-    public void PlayMainTheme()
+    public void PlayGlobalMusic(string musicName, float volume)
     {
         AudioSource audioSource = Instantiate(_musicSource);
-        audioSource.clip = _audioLibrary.GetAudio(AudioLibrary.Names.Theme);
+        audioSource.clip = _audioLibrary.GetAudio(musicName);
+        audioSource.volume = volume;
         audioSource.Play();
     }
 }

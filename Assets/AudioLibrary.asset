@@ -22,10 +22,10 @@ MonoBehaviour:
   - Name: Spit3
     Audio: {fileID: 8300000, guid: e40b8a4f90b12764bb5cf914917f3560, type: 3}
   - Name: Theme
-    Audio: {fileID: 8300000, guid: 2067846a1c634c349a254aaa117ccece, type: 3}
+    Audio: {fileID: 8300000, guid: 6159b77ab8c459c46a00f04260f1a639, type: 3}
   - Name: Vomiting
     Audio: {fileID: 8300000, guid: 6540a8608dab9ed47ba0ea88709c9dfb, type: 3}
   - Name: Sea
-    Audio: {fileID: 8300000, guid: ac1b2236fd34d47429ebfc33b614f581, type: 3}
-  - Name: Seagul
+    Audio: {fileID: 8300000, guid: a702742b81cb5dd418851ca371420b38, type: 3}
+  - Name: Seagull
     Audio: {fileID: 8300000, guid: 9d370f2c0ecad6f4a8af710024c461f4, type: 3}
