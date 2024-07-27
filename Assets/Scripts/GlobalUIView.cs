@@ -29,8 +29,7 @@ public class GlobalUIView : MonoBehaviour
     {
         for (int i = 0; i < 3; i++)
         {
-            _waitingTimeCurrent[i].fillAmount = 
-                _patients[(int)_patients[i].Role].CurrentWaitingTime / _patients[(int)_patients[i].Role].WaitingTime;
+            _waitingTimeCurrent[i].fillAmount = _patients[(int)_patients[i].Role].CurrentWaitingTime / _patients[(int)_patients[i].Role].WaitingTime;
         }
     }
 

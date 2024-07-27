@@ -15,6 +15,7 @@ public class Bootstrap : MonoBehaviour
 
     private Patient[] _patients;
     private BarrelSupplies[] _barrelSupplies;
+    private HoldLadder[] _holdLadders;
 
     private void Awake()
     {
@@ -22,9 +23,15 @@ public class Bootstrap : MonoBehaviour
 
         _patients = FindObjectsByType<Patient>(FindObjectsSortMode.None);
         _barrelSupplies = FindObjectsByType<BarrelSupplies>(FindObjectsSortMode.None);
+        _holdLadders = FindObjectsByType<HoldLadder>(FindObjectsSortMode.None);        
 
         _globalUIView.Inject(inventory, _patients);
         _player.Inject(inventory);
+
+        foreach (var holdLadder in _holdLadders)
+        {
+            holdLadder.Inject(_player);
+        }
 
         foreach (var patient in _patients)
         {
