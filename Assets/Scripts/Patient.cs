@@ -15,6 +15,11 @@ public class Patient : Interactable
     [SerializeField] private float _maxWaitingTime = 45f;
     [SerializeField] private Role _role;
 
+    [SerializeField][Range(0, 0.99f)] private float _chanceSound = 0.4f;
+    [SerializeField] private float _soundDelay = 5f;
+
+    private float _soundDelayTime = 0f;
+
     private AudioSource _audioSource;
 
     private Necessity _necessity = new Necessity();
@@ -151,7 +156,7 @@ public class Patient : Interactable
 
     public override void Interact()
     {
-        if (_state == State.Breaking) return;
+        if (_state == State.Breaking || _state == State.Dead) return;
 
         foreach (Item item in NeedItems)
         {
@@ -180,7 +185,9 @@ public class Patient : Interactable
             _state = State.Breaking;
             NeedItemsChanged?.Invoke(this);
             NeedItems.Clear();
-            _audioSource.Stop();
+
+            _audioSource.clip = _audioLibrary.GetAudio(AudioLibrary.Names.Spit3);
+            _audioSource.Play();
             return;
         }
         NeedItemsChanged?.Invoke(this);
@@ -197,7 +204,6 @@ public class Patient : Interactable
         _state = State.Waiting;
 
         _audioSource.clip = _audioLibrary.GetAudio(AudioLibrary.Names.Cough);
-        _audioSource.Play();
     }
 
     public void Update()
@@ -214,7 +220,23 @@ public class Patient : Interactable
                     CurrentWaitingTime = 0;
                     Debug.Log("You LOSE");
                     _state = State.Dead;
+                    _audioSource.Stop();
                 }
+
+                if (_soundDelayTime >= 0)
+                {
+                    _soundDelayTime -= Time.deltaTime;
+                }
+                else
+                {
+                    if (UnityEngine.Random.Range(0f, 1f) <= _chanceSound)
+                    {
+                        _audioSource.Play();
+                    }
+
+                    _soundDelayTime = _soundDelay;
+                }
+
                 break;
             case State.Breaking:
                 if (_breakTime > 0)
@@ -228,8 +250,8 @@ public class Patient : Interactable
                 }
                 break;
             default:
-                break;
-        }
+                return;
+        } 
     }
 
 }
