@@ -25,7 +25,7 @@ public class Bootstrap : MonoBehaviour
 
         _patients = FindObjectsByType<Patient>(FindObjectsSortMode.None);
         _barrelSupplies = FindObjectsByType<BarrelSupplies>(FindObjectsSortMode.None);
-        _holdLadders = FindObjectsByType<HoldLadder>(FindObjectsSortMode.None);        
+        _holdLadders = FindObjectsByType<HoldLadder>(FindObjectsSortMode.None);
 
         _globalUIView.Inject(inventory, _patients);
         _player.Inject(inventory);
@@ -47,11 +47,13 @@ public class Bootstrap : MonoBehaviour
             barrelSupplies.Inject(_player);
         }
 
-        _diagnostics.Inject(_patients.ToList());        
+        _diagnostics.Inject(_patients.ToList());
     }
 
     private void Start()
     {
+        Time.timeScale = 1f;
+
         PlayGlobalMusic(AudioLibrary.Names.Sea, 0.5f);
         PlayGlobalMusic(AudioLibrary.Names.Seagull, 1f);
     }

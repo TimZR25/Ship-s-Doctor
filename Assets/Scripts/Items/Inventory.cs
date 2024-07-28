@@ -55,7 +55,7 @@ public class Inventory
             ItemCountChanged?.Invoke(items);
             return true;
         }
-        
+
         return false;
     }
 }

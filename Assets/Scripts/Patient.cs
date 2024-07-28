@@ -1,7 +1,5 @@
 using System;
 using System.Collections.Generic;
-using Unity.VisualScripting;
-using UnityEditor.PackageManager.Requests;
 using UnityEngine;
 
 [RequireComponent(typeof(AudioSource))]
@@ -10,7 +8,7 @@ public class Patient : Interactable
 
     [SerializeField] private float _minBreakTime = 5f;
     [SerializeField] private float _maxBreakTime = 30f;
-    
+
     [SerializeField] private float _minWaitingTime = 10;
     [SerializeField] private float _maxWaitingTime = 45f;
     [SerializeField] private Role _role;
@@ -50,17 +48,17 @@ public class Patient : Interactable
 
     public Role Role
     {
-        get 
+        get
         {
-            return _role; 
+            return _role;
         }
-        set 
+        set
         {
-            _role = value; 
+            _role = value;
         }
     }
 
-    public float CurrentWaitingTime 
+    public float CurrentWaitingTime
     {
         get
         {
@@ -227,6 +225,7 @@ public class Patient : Interactable
                 {
                     if (UnityEngine.Random.Range(0f, 1f) <= _chanceSound)
                     {
+                        _audioSource.pitch = UnityEngine.Random.Range(1, 1.2f);
                         _audioSource.Play();
                     }
 
@@ -247,7 +246,7 @@ public class Patient : Interactable
                 break;
             default:
                 return;
-        } 
+        }
     }
 
 }

@@ -1,4 +1,3 @@
-using System.Linq;
 using UnityEngine;
 
 public class Player : MonoBehaviour
@@ -7,6 +6,10 @@ public class Player : MonoBehaviour
 
     [SerializeField] private int _maxItems = 6;
     public int MaxItems => _maxItems;
+
+    [SerializeField] private GameObject _interactButton;
+
+    [SerializeField] private LayerMask _layerMask;
 
     private Inventory _inventory;
     public Inventory Inventory => _inventory;
@@ -19,18 +22,30 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, _interactRadius, _layerMask);
+
+        if (colliders.Length <= 0)
+        {
+            if (_interactButton.activeSelf == false) return;
+
+            _interactButton.SetActive(false);
+
+            return;
+        }
+
+        if (_interactButton.activeSelf == false)
+        {
+            _interactButton.SetActive(true);
+        }
+
         if (Input.GetKeyDown(KeyCode.E))
         {
-            Interact();
+            Interact(colliders);
         }
     }
 
-    private void Interact()
+    private void Interact(Collider2D[] colliders)
     {
-        Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, _interactRadius);
-
-        if (colliders.Length <= 0) return;
-
         foreach (Collider2D collider in colliders)
         {
             if (collider.TryGetComponent(out Interactable interactable))

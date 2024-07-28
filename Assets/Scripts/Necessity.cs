@@ -1,7 +1,5 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.Diagnostics;
 
 public class Necessity
 {
@@ -34,7 +32,7 @@ public class Necessity
                 if (itemsCount > _maxNeededItems) break;
 
                 Item item = _inventory.GetItem(itemType);
-                
+
                 item.Count = count;
                 items.Add(item);
             }

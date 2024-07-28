@@ -1,6 +1,5 @@
 using Cinemachine;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class HoldLadder : Interactable
@@ -8,9 +7,11 @@ public class HoldLadder : Interactable
     [SerializeField] private Transform _holdPos;
     [SerializeField] private Transform _shipPos;
     [SerializeField] private bool _deck;
+
     private Camera _camera;
     private CinemachineVirtualCamera _cinemachineVirtualCamera;
     private Vector3 _offset = new Vector3(0, 0, -10);
+
     private void Start()
     {
         _camera = FindAnyObjectByType<Camera>();

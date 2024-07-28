@@ -14,12 +14,17 @@ public class BarrelSupplies : Interactable
 
     public override void Interact()
     {
-        _audioSource.Play();
-
         Item item = _player.Inventory.GetItem(_itemType);
+
+        if (item.Count == _player.MaxItems) return;
+
         while (item.Count < _player.MaxItems)
         {
             _player.Inventory.AddItem(_itemType);
+        }
+        if (item.Count == _player.MaxItems)
+        {
+            _audioSource.Play();
         }
     }
 }

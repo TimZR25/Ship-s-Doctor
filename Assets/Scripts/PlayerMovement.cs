@@ -1,21 +1,19 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(Rigidbody2D))]
+[RequireComponent(typeof(Rigidbody2D), typeof(SpriteRenderer))]
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private float _speed;
     [SerializeField] private Animator _animator;
 
-    private bool looksLeft;
-
     private Rigidbody2D _rigidbody;
+    private SpriteRenderer _spriteRenderer;
 
     private void Start()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
+        _spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     private void FixedUpdate()
@@ -32,12 +30,12 @@ public class PlayerMovement : MonoBehaviour
 
         if (_inputX < 0)
         {
-            transform.localScale = new Vector3(-1, 1, 1);
+            _spriteRenderer.flipX = true;
         }
 
         if (_inputX > 0)
         {
-            transform.localScale = new Vector3(1, 1, 1);
+            _spriteRenderer.flipX = false;
         }
 
         Vector2 _velocity = new Vector2(_inputX, _inputY) * _speed;

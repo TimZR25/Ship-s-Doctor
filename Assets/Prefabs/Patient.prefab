@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8673279830877124455}
   - component: {fileID: 6833865348191325116}
   - component: {fileID: 5328612982210896911}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Patient
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -153,6 +153,7 @@ MonoBehaviour:
   _minWaitingTime: 15
   _maxWaitingTime: 45
   _role: 0
+  _maxNeededItems: 5
   _chanceSound: 0.4
   _soundDelay: 1
 --- !u!82 &5328612982210896911
@@ -263,7 +264,7 @@ GameObject:
   - component: {fileID: 8511205925481811195}
   - component: {fileID: 6478926020146426171}
   - component: {fileID: 7916641473390426861}
-  m_Layer: 5
+  m_Layer: 3
   m_Name: WaitingTimeCurrent
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -340,7 +341,7 @@ GameObject:
   - component: {fileID: 8852142413963223260}
   - component: {fileID: 3153728172064108305}
   - component: {fileID: 426694720383162487}
-  m_Layer: 5
+  m_Layer: 3
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -456,7 +457,7 @@ GameObject:
   - component: {fileID: 2980689449291876031}
   - component: {fileID: 771857086390212036}
   - component: {fileID: 9149788746355416317}
-  m_Layer: 5
+  m_Layer: 3
   m_Name: WaitingTime
   m_TagString: Untagged
   m_Icon: {fileID: 0}
