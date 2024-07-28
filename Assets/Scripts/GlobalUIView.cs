@@ -1,22 +1,19 @@
-using System.Collections;
-using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class GlobalUIView : MonoBehaviour
 {
-    [SerializeField] private TextMeshProUGUI _orangeCount;
-    [SerializeField] private TextMeshProUGUI _bandageCount;
-    [SerializeField] private TextMeshProUGUI _painkillerCount;
+    [SerializeField] private Text _orangeCount;
+    [SerializeField] private Text _bandageCount;
+    [SerializeField] private Text _painkillerCount;
 
     [SerializeField] private GameObject[] _pirateCaptainNecessity;
     [SerializeField] private GameObject[] _pirateCleanerNecessity;
     [SerializeField] private GameObject[] _pirateDefaultNecessity;
 
-    [SerializeField] private TextMeshProUGUI[] _pirateCaptainNecessityCount;
-    [SerializeField] private TextMeshProUGUI[] _pirateCleanerNecessityCount;
-    [SerializeField] private TextMeshProUGUI[] _pirateDefaultNecessityCount;
+    [SerializeField] private Text[] _pirateCaptainNecessityCount;
+    [SerializeField] private Text[] _pirateCleanerNecessityCount;
+    [SerializeField] private Text[] _pirateDefaultNecessityCount;
 
     private Inventory _inventory;
     private Patient[] _patients;
@@ -29,7 +26,7 @@ public class GlobalUIView : MonoBehaviour
     {
         for (int i = 0; i < 3; i++)
         {
-            _waitingTimeCurrent[i].fillAmount = _patients[(int)_patients[i].Role].CurrentWaitingTime / _patients[(int)_patients[i].Role].WaitingTime;
+            _waitingTimeCurrent[(int)_patients[i].Role].fillAmount = _patients[i].CurrentWaitingTime / _patients[i].WaitingTime;
         }
     }
 
@@ -97,7 +94,7 @@ public class GlobalUIView : MonoBehaviour
                             _pirateCaptainNecessity[2].SetActive(true);
                             _pirateCaptainNecessityCount[2].text = needItem.Count.ToString();
                             break;
-                    }                    
+                    }
                 }
                 break;
             case Role.Cleaner:
@@ -124,7 +121,7 @@ public class GlobalUIView : MonoBehaviour
                             _pirateCleanerNecessityCount[1].text = needItem.Count.ToString();
                             break;
                         case ItemType.Painkillers:
-                            if (needItem.Count == 0) 
+                            if (needItem.Count == 0)
                             {
                                 _pirateCleanerNecessity[2].SetActive(false);
                                 continue;
