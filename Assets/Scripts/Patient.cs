@@ -128,6 +128,8 @@ public class Patient : Interactable
 
     public Action<Patient> NeedItemsChanged;
 
+    public Action Dead;
+
     private void Awake()
     {
         _audioSource = GetComponent<AudioSource>();
@@ -137,8 +139,6 @@ public class Patient : Interactable
 
     private void Start()
     {
-        //RequestItems();
-
         _breakTime = UnityEngine.Random.Range(1, _minWaitingTime);
         _state = State.Breaking;
 
@@ -214,9 +214,9 @@ public class Patient : Interactable
                 else
                 {
                     CurrentWaitingTime = 0;
-                    Debug.Log("You LOSE");
                     _state = State.Dead;
                     _audioSource.Stop();
+                    Dead?.Invoke();
                 }
 
                 if (_soundDelayTime >= 0)

@@ -44,5 +44,6 @@ public class Stopwatch : MonoBehaviour
     public void Stop()
     {
         _isRunning = false;
+        _time.gameObject.SetActive(false);
     }
 }
