@@ -256,7 +256,7 @@ TextureImporter:
       name: ShipDoctor_5
       rect:
         serializedVersion: 2
-        x: 399
+        x: 400
         y: 451
         width: 16
         height: 16
@@ -277,7 +277,7 @@ TextureImporter:
       name: ShipDoctor_6
       rect:
         serializedVersion: 2
-        x: 417
+        x: 416
         y: 451
         width: 16
         height: 16
@@ -298,7 +298,7 @@ TextureImporter:
       name: ShipDoctor_7
       rect:
         serializedVersion: 2
-        x: 430
+        x: 432
         y: 451
         width: 16
         height: 16
@@ -975,7 +975,7 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
