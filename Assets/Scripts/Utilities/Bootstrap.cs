@@ -10,7 +10,10 @@ public class Bootstrap : MonoBehaviour
     [SerializeField] private AudioLibrary _audioLibrary;
     [SerializeField] private AudioSource _musicSource;
 
+    [Header("Utilities")]
     [SerializeField] private Diagnostics _diagnostics;
+    [SerializeField] private LoseMenu _loseMenu;
+    [SerializeField] private Stopwatch _stopwatch;
 
     private Patient[] _patients;
     private BarrelSupplies[] _barrelSupplies;
@@ -26,6 +29,7 @@ public class Bootstrap : MonoBehaviour
 
         _globalUIView.Inject(inventory, _patients);
         _player.Inject(inventory);
+        _loseMenu.Inject(_stopwatch);
 
         foreach (var holdLadder in _holdLadders)
         {
@@ -35,6 +39,7 @@ public class Bootstrap : MonoBehaviour
         foreach (var patient in _patients)
         {
             patient.Inject(_player, _audioLibrary);
+            patient.Dead += _loseMenu.OnDead;
         }
 
         foreach (var barrelSupplies in _barrelSupplies)
@@ -42,7 +47,7 @@ public class Bootstrap : MonoBehaviour
             barrelSupplies.Inject(_player);
         }
 
-        _diagnostics.Inject(_patients.ToList());
+        _diagnostics.Inject(_patients.ToList());        
     }
 
     private void Start()
