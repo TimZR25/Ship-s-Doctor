@@ -38,8 +38,8 @@ public class PlayerMovement : MonoBehaviour
             _spriteRenderer.flipX = false;
         }
 
-        Vector2 _velocity = new Vector2(_inputX, _inputY) * _speed;
+        Vector2 velocity = new Vector2(_inputX, _inputY) * _speed;
 
-        _rigidbody.velocity = _velocity;
+        _rigidbody.velocity = velocity;
     }
 }
